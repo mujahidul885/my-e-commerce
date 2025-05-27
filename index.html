@@ -3,61 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoNatural - Premium Online Shopping</title>
+    <title>GoNatural</title>
     <style>
         :root {
-            --primary: #4a6bff;
-            --secondary: #ff6b6b;
-            --dark: #2d3748;
-            --light: #f7fafc;
-            --gray: #e2e8f0;
+            --primary: #2E7D32; /* Eco green */
+            --secondary: #FF8F00; /* Accent orange */
+            --dark: #263238; /* Dark gray */
+            --light: #F5F5F6; /* Light background */
+            --text: #455A64; /* Text gray */
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
         
         body {
-            background-color: var(--light);
+            background-color: white;
             color: var(--dark);
+            line-height: 1.6;
         }
         
         /* Header Styles */
         header {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
         
         .navbar {
             display: flex;
-            justify-content: space-between;
+            /* justify-content: space-between; */
             align-items: center;
-            padding: 1rem 5%;
+            padding: 1.5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
         
-        .logo {
+        .mylogo {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-right: 90px;
+        }
+        
+        .logo img {
+            height: 60px;
+            
         }
         
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
+            font-size: 1.05rem;
             transition: color 0.3s;
         }
         
@@ -65,153 +76,268 @@
             color: var(--primary);
         }
         
-        .icons {
+        .nav-actions {
             display: flex;
             gap: 1.5rem;
+            align-items: center;
         }
         
-        .icons i {
-            font-size: 1.2rem;
+        .nav-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-button:hover {
+            background-color: #1B5E20;
         }
         
         /* Hero Section */
         .hero {
             display: flex;
             align-items: center;
-            padding: 4rem 5%;
+            padding: 5rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-            gap: 3rem;
+            gap: 4rem;
         }
         
         .hero-content {
             flex: 1;
         }
         
+        .hero-tag {
+            display: inline-block;
+            background-color: #E8F5E9;
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            font-weight: 700;
         }
         
         .hero-content p {
-            font-size: 1.1rem;
-            color: #64748b;
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
         }
         
-        .cta-button {
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .primary-button {
             background-color: var(--primary);
             color: white;
             border: none;
-            padding: 0.8rem 2rem;
-            font-size: 1rem;
+            padding: 0.9rem 2rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         
-        .cta-button:hover {
-            background-color: #3a56d4;
+        .primary-button:hover {
+            background-color: #1B5E20;
+        }
+        
+        .secondary-button {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.9rem 2rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .secondary-button:hover {
+            background-color: #E8F5E9;
         }
         
         .hero-image {
             flex: 1;
+            position: relative;
         }
         
         .hero-image img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
-        /* Featured Categories */
-        .categories {
+        /* Stats Section */
+        .stats {
+            background-color: var(--light);
             padding: 4rem 5%;
+        }
+        
+        .stats-container {
             max-width: 1400px;
             margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .section-title p {
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .category-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .category-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .category-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .category-card:hover .category-img img {
-            transform: scale(1.05);
-        }
-        
-        .category-info {
-            padding: 1.5rem;
+            display: flex;
+            justify-content: space-around;
             text-align: center;
         }
         
-        .category-info h3 {
+        .stat-item {
+            padding: 0 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
             margin-bottom: 0.5rem;
         }
         
-        /* Featured Products */
-        .products {
-            padding: 4rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            background-color: #f8fafc;
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text);
         }
         
-        .product-grid {
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background-color: #E8F5E9;
+            color: var(--primary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            color: var(--text);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            background-color: #E8F5E9;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-icon i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .feature-desc {
+            color: var(--text);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 6rem 5%;
+            background-color: var(--light);
+        }
+        
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+        }
+        
+        .products-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        .view-all {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .product-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -222,136 +348,245 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
-        .product-img {
+        .product-image {
             height: 250px;
             overflow: hidden;
-            position: relative;
         }
         
-        .product-img img {
+        .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
         
-        .product-card:hover .product-img img {
+        .product-card:hover .product-image img {
             transform: scale(1.05);
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
         }
         
         .product-info {
             padding: 1.5rem;
         }
         
-        .product-info h3 {
+        .product-category {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+        }
+        
+        .product-name {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .product-desc {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .product-price {
             font-weight: 700;
-            color: var(--primary);
-            margin: 0.8rem 0;
             font-size: 1.2rem;
         }
         
-        .product-rating {
-            color: #f59e0b;
-            margin-bottom: 1rem;
-        }
-        
         .add-to-cart {
-            width: 100%;
             background-color: var(--primary);
             color: white;
             border: none;
-            padding: 0.6rem;
-            border-radius: 5px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.3s;
         }
         
         .add-to-cart:hover {
-            background-color: #3a56d4;
+            background-color: #1B5E20;
         }
         
-        /* Newsletter */
-        .newsletter {
-            padding: 4rem 5%;
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-            text-align: center;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: #E8F5E9;
+            position: absolute;
+            top: -1.5rem;
+            left: -1rem;
+            z-index: -1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta {
             background-color: var(--primary);
             color: white;
-            border-radius: 10px;
-            margin: 4rem auto;
+            padding: 6rem 5%;
+            text-align: center;
         }
         
-        .newsletter h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .newsletter p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
         }
         
-        .newsletter-form {
+        .cta-buttons {
             display: flex;
-            max-width: 500px;
-            margin: 0 auto;
+            justify-content: center;
+            gap: 1.5rem;
         }
         
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.8rem 1rem;
+        .cta-button-white {
+            background-color: white;
+            color: var(--primary);
             border: none;
-            border-radius: 5px 0 0 5px;
-            font-size: 1rem;
-        }
-        
-        .newsletter-form button {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0 1.5rem;
-            border-radius: 0 5px 5px 0;
+            padding: 0.9rem 2rem;
+            font-size: 1.05rem;
             font-weight: 600;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
         }
         
-        .newsletter-form button:hover {
-            background-color: #e05555;
+        .cta-button-white:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .cta-button-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.9rem 2rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .cta-button-outline:hover {
+            background-color: rgba(255,255,255,0.1);
         }
         
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 4rem 5% 2rem;
+            padding: 5rem 5% 2rem;
         }
         
-        .footer-content {
+        .footer-container {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 3rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .footer-about p {
+            color: #B0BEC5;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary);
         }
         
         .footer-column h3 {
@@ -371,73 +606,72 @@
             background-color: var(--primary);
         }
         
-        .footer-column ul {
+        .footer-links {
             list-style: none;
         }
         
-        .footer-column ul li {
+        .footer-links li {
             margin-bottom: 0.8rem;
         }
         
-        .footer-column ul li a {
-            color: #cbd5e0;
+        .footer-links a {
+            color: #B0BEC5;
             text-decoration: none;
             transition: color 0.3s;
         }
         
-        .footer-column ul li a:hover {
+        .footer-links a:hover {
             color: white;
         }
         
-        .social-links {
+        .footer-contact p {
             display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            color: #B0BEC5;
         }
         
-        .social-links a {
-            color: white;
-            background-color: rgba(255,255,255,0.1);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
+        .footer-contact i {
+            margin-top: 3px;
         }
         
-        .social-links a:hover {
-            background-color: var(--primary);
-        }
-        
-        .copyright {
+        .footer-bottom {
             text-align: center;
             padding-top: 3rem;
             margin-top: 3rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: #a0aec0;
+            color: #B0BEC5;
             font-size: 0.9rem;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header/Navigation -->
     <header>
         <div class="navbar">
-            <div class="logo">GoNatural</div>
+             <a href="#" class="logo">
+                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b7f14c183593717.Y3JvcCwxNDAwLDEwOTUsMCw1MQ.jpg" alt="EcoPack Logo">
+                
+            </a>
+            
+            <div class="mylogo">
+                <span class="logo-text">GoNatural</span>
+           
+            
             <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Shop</a>
-                <a href="#">Categories</a>
+                <a href="#">Products</a>
+                <a href="#">Technology</a>
+                <a href="#">Sustainability</a>
                 <a href="#">About</a>
+                <a href="#">Resources</a>
                 <a href="#">Contact</a>
             </div>
-            <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-user"></i>
-                <i class="fas fa-shopping-cart"></i>
+            <div class="nav-actions">
+                
+                <button class="nav-button">Get Started</button>
             </div>
         </div>
     </header>
@@ -445,191 +679,63 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Discover Amazing Products at Unbeatable Prices</h1>
-            <p>Shop the latest trends in fashion, electronics, home goods and more. Enjoy free shipping on orders over $50 and easy returns.</p>
-            <button class="cta-button">Shop Now</button>
+            <span class="hero-tag">Sustainable Packaging</span>
+            <h1>Nature-Inspired Packaging Solutions for a Greener Future</h1>
+            <p>Our innovative mushroom-based materials provide eco-friendly alternatives to traditional packaging, reducing waste and carbon footprint without compromising quality.</p>
+            <div class="hero-buttons">
+                <button class="primary-button">Explore Products</button>
+                <button class="secondary-button">Learn More</button>
+            </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Featured Products">
+            <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Eco-friendly packaging">
         </div>
     </section>
 
-    <!-- Featured Categories -->
-    <section class="categories">
-        <div class="section-title">
-            <h2>Shop by Category</h2>
-            <p>Browse our wide selection of products organized by category to find exactly what you're looking for.</p>
-        </div>
-        <div class="category-grid">
-            <div class="category-card">
-                <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fashion">
-                </div>
-                <div class="category-info">
-                    <h3>Fashion</h3>
-                    <p>200+ Products</p>
-                </div>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Biodegradable</div>
             </div>
-            <div class="category-card">
-                <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Electronics">
-                </div>
-                <div class="category-info">
-                    <h3>Electronics</h3>
-                    <p>150+ Products</p>
-                </div>
+            <div class="stat-item">
+                <div class="stat-number">60+</div>
+                <div class="stat-label">Happy Clients</div>
             </div>
-            <div class="category-card">
-                <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Home & Garden">
-                </div>
-                <div class="category-info">
-                    <h3>Home & Garden</h3>
-                    <p>180+ Products</p>
-                </div>
+            <div class="stat-item">
+                <div class="stat-number">500T</div>
+                <div class="stat-label">Waste Reduced</div>
             </div>
-            <div class="category-card">
-                <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Beauty">
-                </div>
-                <div class="category-info">
-                    <h3>Beauty</h3>
-                    <p>120+ Products</p>
-                </div>
+            <div class="stat-item">
+                <div class="stat-number">24H</div>
+                <div class="stat-label">Decomposes</div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="products">
-        <div class="section-title">
-            <h2>Featured Products</h2>
-            <p>Check out our most popular products this season.</p>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <span class="section-tag">Our Advantages</span>
+            <h2 class="section-title">Why Choose Mushroom Packaging</h2>
+            <p class="section-subtitle">Our innovative approach to packaging combines sustainability with high performance to meet your business needs.</p>
         </div>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Smart Watch">
-                    <span class="product-badge">Sale</span>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
                 </div>
-                <div class="product-info">
-                    <h3>Smart Watch Pro</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>(42)</span>
-                    </div>
-                    <div class="product-price">$199.99 <span class="old-price">$249.99</span></div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
+                <h3 class="feature-title">100% Compostable</h3>
+                <p class="feature-desc">Our packaging breaks down naturally in just a few weeks, returning nutrients to the soil without harmful residues.</p>
             </div>
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Wireless Headphones">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
                 </div>
-                <div class="product-info">
-                    <h3>Wireless Headphones</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                        <span>(36)</span>
-                    </div>
-                    <div class="product-price">$129.99</div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
+                <h3 class="feature-title">High Performance</h3>
+                <p class="feature-desc">Exceptional durability and protective qualities that rival traditional packaging materials.</p>
             </div>
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Running Shoes">
-                    <span class="product-badge">New</span>
-                </div>
-                <div class="product-info">
-                    <h3>Running Shoes</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>(58)</span>
-                    </div>
-                    <div class="product-price">$89.99</div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Smartphone">
-                </div>
-                <div class="product-info">
-                    <h3>Latest Smartphone</h3>
-                    <div class="product-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>(127)</span>
-                    </div>
-                    <div class="product-price">$799.99</div>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <h2>Subscribe to Our Newsletter</h2>
-        <p>Get the latest updates on new products and upcoming sales</p>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email address">
-            <button type="submit">Subscribe</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>ShopEase</h3>
-                <p>Your one-stop shop for all your needs. We offer quality products at affordable prices with excellent customer service.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Customer Service</h3>
-                <ul>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Return Policy</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Track Order</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Main St, City, Country</li>
-                    <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                    
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-dollar-sign"></i>

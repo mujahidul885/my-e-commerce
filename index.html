@@ -251,50 +251,40 @@
             font-size: 1.15rem;
         }
         
-        .features-grid {
+       .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
             margin-top: 4rem;
         }
         
-        .feature-card {
+        .feature-tag {
             background-color: white;
             border-radius: 8px;
-            padding: 2.5rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            background-color: #E8F5E9;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
         }
         
-        .feature-icon i {
-            font-size: 1.5rem;
+        .feature-tag:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .feature-tag i {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             color: var(--primary);
         }
         
-        .feature-title {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .feature-desc {
-            color: var(--text);
+        .feature-tag:hover i {
+            color: white;
         }
         
         /* Products Section */
@@ -715,27 +705,52 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+   <section class="features">
         <div class="section-header">
-            <span class="section-tag">Our Advantages</span>
-            <h2 class="section-title">Why Choose Mushroom Packaging</h2>
-            <p class="section-subtitle">Our innovative approach to packaging combines sustainability with high performance to meet your business needs.</p>
+            <span class="section-tag">Product Features</span>
+            <h2 class="section-title">Superior Eco-Friendly Properties</h2>
+            <p class="section-subtitle">Our mushroom packaging delivers exceptional performance while meeting the highest sustainability standards</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <h3 class="feature-title">100% Compostable</h3>
-                <p class="feature-desc">Our packaging breaks down naturally in just a few weeks, returning nutrients to the soil without harmful residues.</p>
+            <div class="feature-tag">
+                <i class="fas fa-water"></i>
+                <h3>Ocean Safe</h3>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <h3 class="feature-title">High Performance</h3>
-                <p class="feature-desc">Exceptional durability and protective qualities that rival traditional packaging materials.</p>
+            <div class="feature-tag">
+                <i class="fas fa-ban"></i>
+                <h3>Plastic Free</h3>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-dollar-sign"></i>
+            <div class="feature-tag">
+                <i class="fas fa-flask"></i>
+                <h3>Chemical Free</h3>
+            </div>
+            <div class="feature-tag">
+                <i class="fas fa-leaf"></i>
+                <h3>100% Natural</h3>
+            </div>
+            <div class="feature-tag">
+                <i class="fas fa-fire"></i>
+                <h3>Flame Resistant</h3>
+            </div>
+            <div class="feature-tag">
+                <i class="fas fa-seedling"></i>
+                <h3>Grown</h3>
+            </div>
+            <div class="feature-tag">
+                <i class="fas fa-recycle"></i>
+                <h3>Home Compostable</h3>
+            </div>
+            <div class="feature-tag">
+                <i class="fas fa-expand"></i>
+                <h3>Scalable</h3>
+            </div>
+            <div class="feature-tag">
+                <i class="fas fa-umbrella"></i>
+                <h3>Water Resistant</h3>
+            </div>
+            <div class="feature-tag">
+                <i class="fas fa-palette"></i>
+                <h3>Custom Design</h3>
+            </div>
+        </div>
+    </section>

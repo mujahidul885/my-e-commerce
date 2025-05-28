@@ -530,109 +530,118 @@
         .cta-button-outline:hover {
             background-color: rgba(255,255,255,0.1);
         }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 5rem 5% 2rem;
+        /* Footer Section */
+
+         .footer {
+            background-color: rgb(9, 7, 7);
+            padding: 40px 20px;
+            border-top: 1px solid #e0e0e0;
         }
         
         .footer-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+            gap: 30px;
         }
         
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+        .footer-brand {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+             color: #ffffffa3;
+        }
+        
+        .footer-brand span {
             display: block;
-        }
-        
-        .footer-about p {
-            color: #B0BEC5;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .footer-social a {
-            color: white;
-            background-color: rgba(255,255,255,0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
-        }
-        
-        .footer-social a:hover {
-            background-color: var(--primary);
-        }
-        
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary);
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 5px;
+             color: #ffffffa3;
         }
         
         .footer-links {
-            list-style: none;
+            display: flex;
+            flex-direction: column;
+              color: #ffffffa3;
         }
         
-        .footer-links li {
-            margin-bottom: 0.8rem;
+        .footer-links h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+              color: #ffffffa3;
         }
         
         .footer-links a {
-            color: #B0BEC5;
+            color: #333;
             text-decoration: none;
-            transition: color 0.3s;
+            margin-bottom: 10px;
+            font-size: 14px;
+              color: #ffffffa3;
         }
         
         .footer-links a:hover {
-            color: white;
+            text-decoration: underline;
         }
         
-        .footer-contact p {
+        .footer-newsletter {
             display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-            margin-bottom: 1rem;
-            color: #B0BEC5;
+            flex-direction: column;
         }
         
-        .footer-contact i {
-            margin-top: 3px;
+        .footer-newsletter h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #ffffffa3;
         }
         
-        .footer-bottom {
-            text-align: center;
-            padding-top: 3rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #B0BEC5;
-            font-size: 0.9rem;
+        .email-input {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .email-input input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-right: none;
+            flex: 1;
+        }
+        
+        .email-input button {
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .inquire-btn {
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+            margin-bottom: 20px;
+        }
+        
+        .footer-legal {
+            grid-column: 1 / -1;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #ffffffa3;
+        }
+        
+        .footer-locale {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+           color: #ffffffa3;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -640,15 +649,15 @@
 </head>
 <body>
     <!-- Header/Navigation -->
-    <header>
+   <header>
         <div class="navbar">
-             <a href="#" class="logo">
-                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b7f14c183593717.Y3JvcCwxNDAwLDEwOTUsMCw1MQ.jpg" alt="EcoPack Logo">
+             <a href="./index.html" class="logo">
+                <img src="./public/b7f14c183593717.Y3JvcCwxNDAwLDEwOTUsMCw1MQ.jpg" alt="EcoPack Logo">
                 
             </a>
             
             <div class="mylogo">
-                <span class="logo-text">GoNatural</span>
+                <span class="logo-text" >GoNatural</span>
            
             
             <div class="nav-links">
@@ -678,7 +687,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Eco-friendly packaging">
+            <img src="./public/photo-1605000797499-95a51c5269ae.avif" alt="Eco-friendly packaging">
         </div>
     </section>
 
@@ -754,3 +763,50 @@
             </div>
         </div>
     </section>
+    <!-- //footer section -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                Mushroom Packaging
+                <span>By Ecovative</span>
+            </div>
+            
+            <div class="footer-links">
+                <h3>1 2 3 in</h3>
+                <a href="#">Custom Packaging</a>
+                <a href="#">Ready Made</a>
+                <a href="#">Our Process</a>
+                <a href="#">Licensing</a>
+                <a href="#">Technical Data</a>
+                <a href="#">Information Deck</a>
+            </div>
+            
+            <div class="footer-links">
+                <h3>&nbsp;</h3>
+                <a href="#">Our Customers</a>
+                <a href="#">FAQ</a>
+                <a href="#">About</a>
+                <a href="#">Contact:</a>
+                <a href="#">News</a>
+                <a href="#">Media Kit</a>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3>Stay in the know.</h3>
+                <div class="email-input">
+                    <input type="email" placeholder="Enter your email">
+                    <button>→</button>
+                </div>
+                <button class="inquire-btn">INQUIRE NOW</button>
+            </div>
+            
+            <div class="footer-legal">
+                We present these images to illustrate the flexibility and wide application of our Mushroom® Packaging technology; display of the images here is not to be construed as permission to copy, to make derivative works thereof, or otherwise use such images, packaging designs, or product designs, many of which are subject to intellectual property protections held by Ecovative, our customers, and/or third parties.
+            </div>
+            
+            <div class="footer-locale">
+                United States (USD $) ~
+            </div>
+        </div>
+    </footer>
